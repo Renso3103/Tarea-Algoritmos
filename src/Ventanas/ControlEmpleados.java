@@ -18,6 +18,7 @@ public class ControlEmpleados extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButtonSalir = new javax.swing.JButton();
         Volver = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         Salir = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -27,8 +28,8 @@ public class ControlEmpleados extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(0, 0, 153));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Sistema de Control de Empleados");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 240, 100));
+        jLabel1.setText("Sistema de Control de Empleados ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 240, 100));
 
         jButtonSalir.setBackground(new java.awt.Color(255, 102, 102));
         jButtonSalir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -51,6 +52,12 @@ public class ControlEmpleados extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
+
+        jLabel2.setBackground(new java.awt.Color(0, 0, 102));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("(Ventana donde van los metodos)");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 200, 50));
 
         Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoAzul.png"))); // NOI18N
         getContentPane().add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 440));
@@ -86,5 +93,6 @@ public class ControlEmpleados extends javax.swing.JFrame {
     private javax.swing.JButton Volver;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
