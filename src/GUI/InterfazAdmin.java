@@ -1,4 +1,4 @@
-package Ventanas;
+package GUI;
 
 import java.awt.Image;
 import java.awt.Toolkit;
