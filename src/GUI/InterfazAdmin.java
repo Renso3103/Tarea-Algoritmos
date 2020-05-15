@@ -11,6 +11,10 @@ import sun.security.util.Password;
  */
 public class InterfazAdmin extends javax.swing.JFrame {
 
+    String Usuario = "admin";
+    String Contrasenna = "1234";
+    //private  String admin = "";
+    public static boolean admin = false;
     public InterfazAdmin() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -22,15 +26,15 @@ public class InterfazAdmin extends javax.swing.JFrame {
         return retValue;
 
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabelIcon = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        Usuario = new javax.swing.JLabel();
-        Contraseña = new javax.swing.JLabel();
+        JLabelUsuario = new javax.swing.JLabel();
+        JLabelContrasenna = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         Password = new javax.swing.JPasswordField();
         jButtonSesion = new javax.swing.JButton();
@@ -56,15 +60,15 @@ public class InterfazAdmin extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
 
-        Usuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Usuario.setForeground(new java.awt.Color(255, 255, 255));
-        Usuario.setText("Usuario");
-        getContentPane().add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 80, 30));
+        JLabelUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        JLabelUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        JLabelUsuario.setText("Usuario");
+        getContentPane().add(JLabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 80, 30));
 
-        Contraseña.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Contraseña.setForeground(new java.awt.Color(255, 255, 255));
-        Contraseña.setText("Contraseña");
-        getContentPane().add(Contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 110, 30));
+        JLabelContrasenna.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        JLabelContrasenna.setForeground(new java.awt.Color(255, 255, 255));
+        JLabelContrasenna.setText("Contraseña");
+        getContentPane().add(JLabelContrasenna, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 110, 30));
 
         txtUser.setBackground(new java.awt.Color(0, 51, 102));
         txtUser.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -104,14 +108,13 @@ public class InterfazAdmin extends javax.swing.JFrame {
 
         jButtonVolverUser.setBackground(new java.awt.Color(255, 255, 255));
         jButtonVolverUser.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButtonVolverUser.setForeground(new java.awt.Color(0, 0, 102));
-        jButtonVolverUser.setText("Usuario/Consulta");
+        jButtonVolverUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atras.png"))); // NOI18N
         jButtonVolverUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVolverUserActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVolverUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 160, -1));
+        getContentPane().add(jButtonVolverUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 40, 40));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoAzul.png"))); // NOI18N
         jLabelFondo.setText("f");
@@ -150,22 +153,22 @@ public class InterfazAdmin extends javax.swing.JFrame {
     private void jButtonSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSesionMouseClicked
         // Validacion de Usuario/contraseña 
 
-        String Usuario = "admin";
-        String Contraseña = "1234";
-
+        // String Usuario = "admin";
+        //String Contraseña = "1234";
         String pass = new String(Password.getPassword());
 
-        if (txtUser.getText().equals(Usuario) && pass.equals(Contraseña)) {
+        if (txtUser.getText().equalsIgnoreCase(Usuario) && pass.equalsIgnoreCase(Contrasenna)) {
 
             ControlEmpleados v3 = new ControlEmpleados();
             v3.setVisible(true);
             dispose();
-
+            this.admin = true;
         } else {
 
             JOptionPane.showMessageDialog(this, "Usuario / Conatraseña incorrecta");
+            
         }
-
+        System.out.println("admin " + this.admin);
     }//GEN-LAST:event_jButtonSesionMouseClicked
 
     public static void main(String args[]) {
@@ -173,14 +176,16 @@ public class InterfazAdmin extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new InterfazAdmin().setVisible(true);
+                
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Contraseña;
+    private javax.swing.JLabel JLabelContrasenna;
+    private javax.swing.JLabel JLabelUsuario;
     private javax.swing.JPasswordField Password;
-    private javax.swing.JLabel Usuario;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonSesion;
     private javax.swing.JButton jButtonVolverUser;
@@ -188,4 +193,7 @@ public class InterfazAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelIcon;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
-}
+
+    
+
+}//Fin de la clase

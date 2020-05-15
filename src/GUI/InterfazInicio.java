@@ -6,6 +6,8 @@ package GUI;
  */
 public class InterfazInicio extends javax.swing.JFrame {
 
+    public static boolean admin = false;
+    
     public InterfazInicio() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -48,18 +50,18 @@ public class InterfazInicio extends javax.swing.JFrame {
                 jButtonIrAdminActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonIrAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+        getContentPane().add(jButtonIrAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, 120, 30));
 
         jButtonSesión.setBackground(new java.awt.Color(255, 255, 255));
         jButtonSesión.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButtonSesión.setForeground(new java.awt.Color(0, 51, 102));
-        jButtonSesión.setText("Iniciar Sesión");
+        jButtonSesión.setText("Consulta");
         jButtonSesión.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSesiónActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSesión, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, -1, 30));
+        getContentPane().add(jButtonSesión, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 120, 30));
 
         jLabelfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoAzul.png"))); // NOI18N
         getContentPane().add(jLabelfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 570));
@@ -77,6 +79,8 @@ public class InterfazInicio extends javax.swing.JFrame {
 
         //Boton Inicio de Sesión
         ControlEmpleados v3 = new ControlEmpleados();
+        this.admin=false;
+        System.out.println("admin? "+admin);
         v3.setVisible(true);
         dispose();
 
@@ -86,10 +90,23 @@ public class InterfazInicio extends javax.swing.JFrame {
 
         //Boton de ir al ventana de inicio sesion admin
         InterfazAdmin v2 = new InterfazAdmin();
+        admin = true;
+        System.out.println("admin? "+admin);
         v2.setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_jButtonIrAdminActionPerformed
-
+    
+    public static boolean getAdmin(){
+        boolean administrador=false;
+        if (admin == true) {
+            administrador = true;
+        }else{
+        administrador=false;
+        }
+        return administrador;
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
